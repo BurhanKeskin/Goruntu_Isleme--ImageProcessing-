@@ -96,6 +96,8 @@ while True:
         width, height = rectengle.size[0], rectengle.size[1]
 
         cv2.rectangle(frame, ((centerX - width//2),(centerY - height//2 )), ((centerX + width//2), (centerY + height//2)), rectColor, cv2.FILLED)
+        
+        # Dikdörtgenlere saydamlık katmak için addWeighted() fonksiyonunu kullandık.
         frameNew = cv2.addWeighted(SourceFrame, alpha, frame, 1 - alpha, -1 )
 
     cv2.imshow("Live Camera", frameNew)
